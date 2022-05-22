@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/price', [Controller::class, 'price']);
+Route::post('/price', [Controller::class, 'price']);

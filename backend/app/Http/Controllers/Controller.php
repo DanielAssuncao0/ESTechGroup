@@ -22,10 +22,8 @@ class Controller extends BaseController
 
     public function price(Request $request)
     {
-        $params = $request->all();
-
-        $productCodes = ['UXWOPX', 'TKPZAJ', 'DGDSDL', 'HYAADK'];
-        $accountId = 'MFJLMYDGAPIMNS';
+        $productCodes = $request->input('productCodes', []);
+        $accountId = $request->input('accountId', null);
         $price = $this->service->getPrices($productCodes, $accountId);
 
         return ['data' => $price];
